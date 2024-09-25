@@ -1,12 +1,39 @@
 <script>
 export default {
     name: 'AppHeader',
-    props: {
-
-    },
+    
     data() {
         return {
-
+            navLinks: [
+                {
+                    label: "HOME",
+                    url: "#",
+                },
+                {
+                    label: "FIXTURES & RESULTS",
+                    url: "#",
+                },
+                {
+                    label: "LEAGUE TABLE",
+                    url: "#",
+                },
+                {
+                    label: "PLAYERS",
+                    url: "#",
+                },
+                {
+                    label: "GALLERY",
+                    url: "#",
+                },
+                {
+                    label: "BLOG",
+                    url: "#",
+                },
+                {
+                    label: "CONTACT",
+                    url: "#",
+                },
+            ]
         }
     }
 }
@@ -17,7 +44,7 @@ export default {
         <div class="position-relative">
             <div class="top-header position-absolute">
                 <div class="container">
-                    <div class="row pt-2">
+                    <div class="row pt-2 mb-3">
                         <div class="col text-white d-flex flex-wrap align-items-center">
                             <a href="#"><img src="../assets/sponsor1.png" alt="sponsor-1"></a>
                             <a href="#"><img src="../assets/sponsor2.png" alt="sponsor-2"></a>
@@ -37,7 +64,7 @@ export default {
                     <div>
                         <ul class="d-flex p-0 justify-content-center">
                             <li>
-                                <a href="#">CIAO</a>
+                                <a href="#">HOME</a>
                             </li>
                             
                         </ul>
