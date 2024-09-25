@@ -8,7 +8,7 @@ export default {
         return {
             players: [
                 {
-                    img: '../assets/player1.jpg',
+                    img: 'player1.jpg',
                     shirtNumber: '07',
                     nameAndRole: 'Adam Brown - Forwarder'
                 },
@@ -27,9 +27,14 @@ export default {
                     shirtNumber: '15',
                     nameAndRole: 'Ethan Smith - Midfielder'
                 }
-            ]
+            ],
         }
-    }
+    },
+    methods: {
+            getImageUrl(imgPath) {
+                return new URL(imgPath, import.meta.url).href;
+            }
+        }
 }
 </script>
 
@@ -42,7 +47,7 @@ export default {
             <ul class="player-cards">
                 <li class="single-card" v-for="(player, index) in players" :key="index">
                     <div class="card-image">
-                        <img :src='player.img' alt="player-img">
+                        <img :src='getImageUrl(`../assets/${player.img}`)' alt="player-img">
                     </div>
                     <div class="player-description">
                         <div class="number">
