@@ -6,7 +6,13 @@ export default {
     },
     data() {
         return {
-
+            players: [
+                {
+                    img: 'player1.jpg',
+                    shirtNumber: '07',
+                    nameAndRole: 'Adam Brown - Forwander'
+                }
+            ]
         }
     }
 }
@@ -19,7 +25,7 @@ export default {
                 <h3>Players</h3>
             </div>
             <div class="player-cards">
-                <div class="single-card">
+                <div class="single-card" v-for="(card, index) in 4" :key="index">
                     <div class="card-image">
                         <img src="../assets/player1.jpg" alt="player 1">
                     </div>
@@ -48,12 +54,19 @@ export default {
 }
 
 img {
-    width: 200px;
+    width: 250px;
 }
 
 .title {
     color: white;
     font-weight: 500;
+    text-align: center;
+    padding: 20px;
+}
+
+.player-cards {
+    display: flex;
+    justify-content: space-around;
 }
 
 .single-card {
@@ -67,12 +80,13 @@ img {
 .player-description {
     text-align: center;
     color: white;
-    width: 200px;
+    width: 250px;
+    height: 80px;
     border-radius: 20px;
     padding: 10px;
     background-color: black;
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 0;
 }
 
