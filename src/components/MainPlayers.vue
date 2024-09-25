@@ -68,7 +68,7 @@ export default {
 </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main-players {
     height: 550px;
     background-image: url(../assets/player.jpg);
@@ -150,6 +150,7 @@ li {
     text-align: center;
     border: 1px solid white;
     font-weight: 500;
+    cursor: pointer;
 }
 
 </style>
