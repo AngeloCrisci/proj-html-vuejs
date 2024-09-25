@@ -6,12 +6,22 @@ export default {
 
         }
     },
+    props: {
+        linkLabel: {
+            type: String,
+            require: true
+        },
+        linkUrl: {
+            type: String,
+            required: true
+        }
+    }
 }
 </script>
 
 <template>
     <li>
-        <a href="#">CIAO</a>
+        <a href="linkUrl">{{ linkLabel }}</a>
     </li>
 </template>
 
