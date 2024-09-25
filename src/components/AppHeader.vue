@@ -1,4 +1,6 @@
 <script>
+import HeaderLinksItems from './HeaderLinksItems.vue';
+
 export default {
     name: 'AppHeader',
     
@@ -35,12 +37,18 @@ export default {
                 },
             ]
         }
+    },
+    components: {
+        HeaderLinksItems
     }
 }
+
 </script>
 
 <template>
     <header>
+
+        <!-- ! NAVBAR -->
         <div class="position-relative">
             <div class="top-header position-absolute">
                 <div class="container">
@@ -61,18 +69,18 @@ export default {
                         </div>  
                     </div>
 
-                    <div>
+                    <div class="ul-box">
                         <ul class="d-flex p-0 justify-content-center">
-                            <li>
-                                <a href="#">HOME</a>
-                            </li>
-                            
+
+                            <HeaderLinksItems/>
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         
+        <!-- ! CAROUSEL -->
         <section class="header-carousel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -115,16 +123,13 @@ export default {
             margin-left: 25px;
         }
 
-        ul {
-            list-style-type: none;
+        .ul-box {
+            margin-bottom: 30px;
 
-            a {
-                text-decoration: none;
-                color: white;
-                font-weight: bold;
+            ul {
+            list-style-type: none;
             }
         }
-
     }
 
     .header-carousel img{
