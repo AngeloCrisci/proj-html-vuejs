@@ -8,9 +8,24 @@ export default {
         return {
             players: [
                 {
-                    img: 'player1.jpg',
+                    img: '../assets/player1.jpg',
                     shirtNumber: '07',
-                    nameAndRole: 'Adam Brown - Forwander'
+                    nameAndRole: 'Adam Brown - Forwarder'
+                },
+                {
+                    img: 'player2.jpg',
+                    shirtNumber: '09',
+                    nameAndRole: 'Michael Kayn - Forwarder'
+                },
+                {
+                    img: 'player3.jpg',
+                    shirtNumber: '11',
+                    nameAndRole: 'Michael Lee - Forwarder'
+                },
+                {
+                    img: 'player4.jpg',
+                    shirtNumber: '15',
+                    nameAndRole: 'Ethan Smith - Midfielder'
                 }
             ]
         }
@@ -24,21 +39,21 @@ export default {
             <div class="title">
                 <h3>Players</h3>
             </div>
-            <div class="player-cards">
-                <div class="single-card" v-for="(card, index) in 4" :key="index">
+            <ul class="player-cards">
+                <li class="single-card" v-for="(player, index) in players" :key="index">
                     <div class="card-image">
-                        <img src="../assets/player1.jpg" alt="player 1">
+                        <img :src='player.img' alt="player-img">
                     </div>
                     <div class="player-description">
                         <div class="number">
-                            07
+                            {{ player.shirtNumber }}
                         </div>
                         <div class="name-role">
-                            Adam Brown - Forwander
+                            {{ player.nameAndRole }}
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
             <div class="player-button">
 
             </div>
@@ -55,6 +70,10 @@ export default {
 
 img {
     width: 250px;
+}
+
+li {
+    list-style-type: none;
 }
 
 .title {
