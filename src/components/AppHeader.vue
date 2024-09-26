@@ -14,7 +14,7 @@ export default {
 
 <template>
     <h1>
-        HEADER
+        Header
     </h1>
 </template>
 
