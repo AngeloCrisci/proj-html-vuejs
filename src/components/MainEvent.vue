@@ -15,15 +15,15 @@ export default {
 <template>
     <section id="main-event">
         <div class="container">
-            <div class="row mt-5">
-                <div class="col-5 d-flex text-end">
+            <div class="mt-5 d-flex justify-content-between">
+                <div class=" d-flex">
                     <p class="fw-bolder"> TEAM1</p>
                     <p class="fw-bolder"> IMMAGINE</p>
                 </div>
-                <div class="col">
+                <div>
                     <p class="fw-bolder"> VS</p>
                 </div>
-                <div class="col-5 d-flex">
+                <div class=" d-flex">
                     <p class="fw-bolder"> IMMAGINE</p>
                     <p class="fw-bolder"> TEAM2</p>
                 </div>
@@ -34,13 +34,17 @@ export default {
                     <p class="col "># Expert Stadium</p>
                 </div>
             </div>
-            <div class="d-flex justify-content-center align-content-center">
-                <button type="button" class="btn btn-dark text-center p-2">View Match Details</button>
+            <div class="d-flex justify-content-center align-content-center mb-4">
+                <button type="button" class="my-btn btn btn-dark text-center p-3 py-3">View Match Details</button>
             </div>
         </div>
     </section>
 </template>
 
-<style lang="scss">
-.btn {}
+<style scoped lang="scss">
+.my-btn {
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 30px;
+}
 </style>
