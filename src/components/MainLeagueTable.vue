@@ -205,7 +205,7 @@ export default {
             </div>
 
             <div class="d-flex align-items-center justify-content-center matches-black gap-2">
-                <p><strong>View Full Fixtures</strong></p>
+                <p class="h5"><strong>View Full Fixtures</strong></p>
             </div>
         </div>
     </div>
@@ -223,6 +223,13 @@ export default {
     .league-table{
         flex-basis: 50%;
         table{
+            background-color: rgb(243,243,243);
+            border-left: 1px solid rgb(184, 182, 182);
+            border-right: 1px solid rgb(184, 182, 182);
+            thead{
+                border-left: 1px solid;
+                border-right: 1px solid;
+            }
             .number {
                 width: 30px;
             }
@@ -231,10 +238,36 @@ export default {
                 vertical-align: baseline;
                 width: 50px;
             }
+            tfoot{
+                height: 70px;
+                border-left: 1px solid;
+                border-right: 1px solid;
+                tr{
+                    td{
+                        vertical-align: middle;
+                    }
+                }
+            }
         }
     }
     .fixtures-results {
         flex-basis: 50%;
+        
+        .matches-table{
+            .matches{
+                height: 80px;
+                background-color: rgb(243,243,243);
+                height: 80.7px;
+            }
+            .matches-b {
+                background-color: rgb(235,235,235);
+            }
+            .matches-black {
+                height:70px;
+                background-color: black;
+                color: white;
+            }
+        }
     }
 }
 </style>
