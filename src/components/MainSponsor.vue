@@ -36,7 +36,6 @@ export default {
 
 <style lang="scss" scoped >
 .main-sponsors {
-    height: 225px;
     background-color: black;
     display: flex;
     align-items: center;
@@ -44,7 +43,7 @@ export default {
 
 .container-flex {
     display: flex;
-    height: 60%;
+    padding: 30px;
     justify-content: space-around;
 }
 
@@ -60,5 +59,12 @@ img {
     border: 1px solid white;
     border-radius: 30px;
     padding: 20px;
+}
+
+@media screen and (max-width: 778px) {
+    .container-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 </style>
