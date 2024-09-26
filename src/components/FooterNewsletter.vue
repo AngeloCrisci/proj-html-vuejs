@@ -18,6 +18,10 @@ export default {
 </template>
 
 <style scoped>
+    .footer-newsletter {
+        flex-basis: calc(100% / 3);
+    }
+
     h3, p {
         color: white;
     }

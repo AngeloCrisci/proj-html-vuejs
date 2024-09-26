@@ -35,6 +35,18 @@ data() {
             'bi bi-facebook',
             'bi bi-instagram',
             'bi bi-twitter'
+        ],
+        educationLinks: [
+            'fixtures & results',
+            'league table',
+            'players',
+            'gallery'
+        ],
+        quickLinks: [
+            'home',
+            'blog',
+            'gallery',
+            'contact'
         ]
     }
 },
@@ -46,14 +58,17 @@ methods: {
 
 <template>
     <footer>
-        <div class="general-components">
+        <div class="container general-components">
             <div class="footer-top">
                 <FooterContacts
                     :contacts="contacts"
                     :socials="socials"
                 />
                 <FooterNewsletter/>
-                <FooterLinks/>
+                <FooterLinks
+                    :educationLinks="educationLinks"
+                    :quickLinks="quickLinks"
+                />
             </div>
             <div class="footer-bottom">
                 <FooterRights/>
@@ -66,11 +81,12 @@ methods: {
 footer {
     height: 400px;
     background-image: url(../assets/footer-bg-football.jpg);
+    padding-top: 50px;
 }
 
 .footer-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 40px;
 }
 </style>

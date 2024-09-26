@@ -14,22 +14,24 @@ export default {
         type: Array,
         required: true
     }
-},
+    },
 }
 </script>
 
 <template>
     <div class="footer-contacts">
-        <div class="club-logo">
-            <img src="../assets/logo-footer-football.png" alt="logo-club">
-        </div>
-        <div class="club-contacts" >
-            <div :class="contact.typeOfContact" class="d-flex gap-3" v-for="(contact, index) in contacts" :key="index">
-                <i :class="contact.img"></i>
-                <span>{{ contact.reference }}</span>
+        <div class="container">
+            <div class="club-logo">
+                <img src="../assets/logo-footer-football.png" alt="logo-club">
             </div>
-            <div class="social d-flex gap-3">
-                <i :class="social" v-for="(social, index) in socials" :key="index"></i>
+            <div class="club-contacts" >
+                <div :class="contact.typeOfContact" class="d-flex gap-3" v-for="(contact, index) in contacts" :key="index">
+                    <i :class="contact.img"></i>
+                    <span>{{ contact.reference }}</span>
+                </div>
+                <div class="social d-flex gap-3">
+                    <i :class="social" v-for="(social, index) in socials" :key="index"></i>
+                </div>
             </div>
         </div>
     </div>
@@ -42,6 +44,13 @@ export default {
 
 img {
     width: 60px;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 span {
