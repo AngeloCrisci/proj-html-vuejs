@@ -157,7 +157,7 @@ export default {
 
         i {
             font-size: 1.8rem;
-            margin-left: 25px;
+            margin-left: 20px;
         }
 
         .ul-box {
