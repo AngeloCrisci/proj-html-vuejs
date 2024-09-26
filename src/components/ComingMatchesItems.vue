@@ -43,9 +43,9 @@ export default {
                 </div>
             </div>
             <div class="address">
-                <div class="d-flex justify-content-center align-content-center">
-                    <p class="text-end"> {{ match.date }} </p>
-                    <p># Expert Stadium</p>
+                <div class="d-flex justify-content-center align-content-center gap-3">
+                    <p class="text-end"><i class="bi bi-calendar3"></i> {{ match.date }} </p>
+                    <p><i class="bi bi-plus-circle"></i> Expert Stadium</p>
                 </div>
             </div>
         </div>

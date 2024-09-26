@@ -32,9 +32,9 @@ export default {
                 </div>
             </div>
             <div class="address">
-                <div class="row justify-content-center align-content-center">
-                    <p class="col text-end"># May, 21 , 2022 18:05 pm </p>
-                    <p class="col "># Expert Stadium</p>
+                <div class="row justify-content-center align-content-center gap-3">
+                    <p class="col text-end"><i class="bi bi-calendar3"></i> May, 21 , 2022 18:05 pm </p>
+                    <p class="col "><i class="bi bi-plus-circle"></i> Expert Stadium</p>
                 </div>
             </div>
             <div class="d-flex justify-content-center align-content-center mb-4">
