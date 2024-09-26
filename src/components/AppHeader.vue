@@ -197,7 +197,7 @@ export default {
     #sidebar-icon {
         z-index: 1;
         top: 189px;
-        right: 25%;
+        right: 12%;
         color: white;
         font-size: 2.5rem;
     }
