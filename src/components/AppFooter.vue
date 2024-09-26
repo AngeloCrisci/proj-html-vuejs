@@ -6,9 +6,6 @@ import FooterRights from './FooterRights.vue';
 
 export default {
     name: 'AppFooter',
-    props: {
-
-},
 components: {
     FooterContacts,
     FooterNewsletter,
@@ -17,7 +14,17 @@ components: {
 },
 data() {
     return {
-
+        contacts: [
+            {
+                address: 'New Jersey, USA' 
+            },
+            {
+                telephone: '+1 (234) 567 89 10'
+            },
+            {
+                email: 'example@example.com'
+            }
+        ]
     }
 },
 methods: {
@@ -29,7 +36,9 @@ methods: {
 <template>
     <footer>
         <div class="footer-top">
-            <FooterContacts/>
+            <FooterContacts
+                :contacts="contacts"
+            />
             <FooterNewsletter/>
             <FooterLinks/>
         </div>
