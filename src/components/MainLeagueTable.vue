@@ -205,7 +205,7 @@ export default {
             </div>
 
             <div class="d-flex align-items-center justify-content-center matches-black gap-2">
-                <p><strong>View Full Fixtures</strong></p>
+                <p class="h5"><strong>View Full Fixtures</strong></p>
             </div>
         </div>
     </div>
