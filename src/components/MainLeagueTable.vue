@@ -223,9 +223,8 @@ export default {
     .league-table{
         flex-basis: 50%;
         table{
-            background-color: rgb(243,243,243);
-            border-left: 1px solid rgb(184, 182, 182);
-            border-right: 1px solid rgb(184, 182, 182);
+            border-left: 1px solid rgb(235,235,235);
+            border-right: 1px solid rgb(235,235,235);
             thead{
                 border-left: 1px solid;
                 border-right: 1px solid;
@@ -237,6 +236,7 @@ export default {
                 border-bottom-width: 0px;
                 vertical-align: baseline;
                 width: 50px;
+                background-color: rgb(243,243,243);
             }
             tfoot{
                 height: 70px;
