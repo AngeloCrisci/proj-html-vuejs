@@ -9,6 +9,10 @@ export default {
     contacts: {
         type: Array,
         required: true
+    },
+    socials: {
+        type: Array,
+        required: true
     }
 },
 }
@@ -19,23 +23,13 @@ export default {
         <div class="club-logo">
             <img src="../assets/logo-footer-football.png" alt="logo-club">
         </div>
-        <div class="club-contacts">
-            <div class="location d-flex gap-3">
-                <i class="bi bi-geo-alt"></i>
-                <span>{{ contacts[0].address }}</span>
-            </div>
-            <div class="telephone-number d-flex gap-3">
-                <i class="bi bi-telephone"></i>
-                <span>{{ contacts[1].telephone }}</span>
-            </div>
-            <div class="e-mail d-flex gap-3">
-                <i class="bi bi-envelope"></i>
-                <span>{{ contacts[2].email }}</span>
+        <div class="club-contacts" >
+            <div :class="contact.typeOfContact" class="d-flex gap-3" v-for="(contact, index) in contacts" :key="index">
+                <i :class="contact.img"></i>
+                <span>{{ contact.reference }}</span>
             </div>
             <div class="social d-flex gap-3">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-twitter"></i>
+                <i :class="social" v-for="(social, index) in socials" :key="index"></i>
             </div>
         </div>
     </div>

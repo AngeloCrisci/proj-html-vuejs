@@ -16,14 +16,25 @@ data() {
     return {
         contacts: [
             {
-                address: 'New Jersey, USA' 
+                typeOfContact: 'location',
+                img: 'bi bi-geo-alt',
+                reference: 'New Jersey, USA' 
             },
             {
-                telephone: '+1 (234) 567 89 10'
+                typeOfContact: 'telephone',
+                img: 'bi bi-telephone',
+                reference: '+1 (234) 567 89 10'
             },
             {
-                email: 'example@example.com'
+                typeOfContact: 'email',
+                img: 'bi bi-envelope',
+                reference: 'example@example.com'
             }
+        ],
+        socials: [
+            'bi bi-facebook',
+            'bi bi-instagram',
+            'bi bi-twitter'
         ]
     }
 },
@@ -39,6 +50,7 @@ methods: {
             <div class="footer-top">
                 <FooterContacts
                     :contacts="contacts"
+                    :socials="socials"
                 />
                 <FooterNewsletter/>
                 <FooterLinks/>
