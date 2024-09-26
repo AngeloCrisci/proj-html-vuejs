@@ -6,9 +6,15 @@ export default {
     },
     data() {
         return {
-
+            articles: [
+                {name: 'What is Football', img: 'news1-1-300x300.png', description:'Football is a sport known as a ball game and is loved by[...]'},
+                {name: 'Football Rules', img: 'news3-1-300x300.png', description:'GOLDEN GOAL: In a football match, the goal scored by one of the teams in […]'},
+                {name: 'Football Features', img: 'news2-1-300x300.png', description:'Football: It is an aerobic-based anaerobic sport in which jumps, kicks, turns, running with changing […]'},
+                {name: 'Football Terms', img: 'news4-1-300x300.png', description:'GOLDEN GOAL: In a football match, the goal scored by one of the teams in […]'},
+                {name: 'How many football players are there in the world?', img: 'news6-1-300x300.png', description:'According to this report, there are more than 301 thousand football clubs, over 1.752 million […]'}
+            ]
         }
-    }
+    },
 }
 </script>
 
@@ -21,53 +27,24 @@ export default {
     </div>
     <div class="container text-center">
         <div class="row align-items-center">
-            <div class="col-3">
+
+            <div class="col-3" v-for="(article, index) in articles" :key="index" >
                 <div class="card card-layout">
                     <div class="card-body text-card-field text-center p-4">
-                        <img src="../assets/news4-1.png" class="card-img-top" alt="...">
+                        <img :src="getImageUrl(`../assets/${article.img}`)" class="card-img-top" alt="...">
                         <p class="h4">29.05.2022-Football</p>
-                        <p class="h3"><strong>Football Terms</strong></p>
-                        <p>GOLDEN GOAL: In a football match, the goal scored by one of the teams in[...]</p>
+                        <p class="h3"><strong>{{ article.name }}</strong></p>
+                        <p>{{ article.description }}</p>
                         <button type="button" class="btn btn-dark button-card"><strong>More</strong></button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card card-layout">
-                    <div class="card-body text-card-field text-center p-4">
-                        <img src="../assets/news4-1.png" class="card-img-top" alt="...">
-                        <p class="h4">29.05.2022-Football</p>
-                        <p class="h3"><strong>Football Terms</strong></p>
-                        <p>GOLDEN GOAL: In a football match, the goal scored by one of the teams in[...]</p>
-                        <button type="button" class="btn btn-dark button-card"><strong>More</strong></button>
-                    </div>
+            <div class="thumbnails d-flex justify-content-center gap-1">
+                <div class="thumb" v-for="n in 5">
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card card-layout">
-                    <div class="card-body text-card-field text-center p-4">
-                        <img src="../assets/news4-1.png" class="card-img-top" alt="...">
-                        <p class="h4">29.05.2022-Football</p>
-                        <p class="h3"><strong>Football Terms</strong></p>
-                        <p>GOLDEN GOAL: In a football match, the goal scored by one of the teams in[...]</p>
-                        <button type="button" class="btn btn-dark button-card"><strong>More</strong></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="card card-layout">
-                    <div class="card-body text-card-field text-center p-4">
-                        <img src="../assets/news4-1.png" class="card-img-top" alt="...">
-                        <p class="h4">29.05.2022-Football</p>
-                        <p class="h3"><strong>Football Terms</strong></p>
-                        <p>GOLDEN GOAL: In a football match, the goal scored by one of the teams in[...]</p>
-                        <button type="button" class="btn btn-dark button-card"><strong>More</strong></button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -75,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-layout {
-    width: 20rem;
+    width: 19.5rem;
     img{
         height: 230px;
         width: 220px;
@@ -84,5 +61,16 @@ export default {
         padding: 20px 50px;
         border-radius: 30px;
     }
+}
+
+.thumb {
+    width: 70px;
+    height: 10px;
+    background-color: grey;
+    border-radius: 20px;
+}
+
+.thumb:active {
+    background-color: black;
 }
 </style>
