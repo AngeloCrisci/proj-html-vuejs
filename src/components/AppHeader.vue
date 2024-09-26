@@ -70,7 +70,7 @@ export default {
                     </div>
 
                     <div class="ul-box">
-                        <ul class="p-0 justify-content-center gap-5 d-none d-lg-flex">
+                        <ul class="p-0 justify-content-center gap-lg-4 gap-xl-5 d-none d-lg-flex">
 
                             <HeaderLinksItems v-for="(link, index) in navLinks" :key="index"
                             :linkLabel="link.label"
