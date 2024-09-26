@@ -86,20 +86,52 @@ export default {
         <section class="header-carousel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item">
                         <img class="d-block w-100" src="../assets/slider1-1.jpg" alt="slider-img-1">
-                        <div>
-                            <h1 text-white>Welcome to Football Club</h1>
+                        
+                        <div class="position-absolute carousel-div-text">
+                            <h1 class="text-white fw-bold text-center">Welcome to <br> Football Club</h1>
+                            <p class="text-white fw-bold text-center fs-5 mb-4">Live match fix types and results.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
+                            </div>
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <img class="d-block w-100" src="../assets/slider2-1.jpg" alt="slider-img-2">
+
+                        <div class="position-absolute carousel-div-text">
+                            <h1 class="text-white fw-bold text-center">Football Club <br> Sport Club</h1>
+                            <p class="text-white fw-bold text-center fs-5 mb-4">Private football matches.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="carousel-item">
                         <img class="d-block w-100" src="../assets/slider3.jpg" alt="slider-img-3">
+
+                        <div class="position-absolute carousel-div-text">
+                            <h1 class="text-white fw-bold text-center">Professional Football Football Club</h1>
+                            <p class="text-white fw-bold text-center fs-5 mb-4">Football is the poetry of movement.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="carousel-item">
+
+                    <div class="carousel-item active">
                         <img class="d-block w-100" src="../assets/slider4.jpg" alt="slider-img-4">
+
+                        <div class="position-absolute carousel-div-text">
+                            <h1 class="text-white fw-bold text-center">Football Club <br> Sport Club</h1>
+                            <p class="text-white fw-bold text-center fs-5 mb-4">Football is a head game.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -117,7 +149,7 @@ export default {
     .top-header {
         width: 100%;
         min-height: 200px;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
         z-index: 1;
 
         i {
@@ -138,5 +170,24 @@ export default {
         height: 1140px;
         object-fit: cover;
 
+    }
+    .carousel-div-text {
+        width: 750px;
+        position: absolute;
+        z-index: 1;
+        top: 57%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h1 {
+            font-size: 4.6rem;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 20px 40px;
+            border: 2px solid white;
+            border-radius: 40px;
+        }
     }
 </style>
