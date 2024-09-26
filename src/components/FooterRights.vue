@@ -9,8 +9,14 @@ export default {
 </script>
 
 <template>
-    test4
+    <div class="footer-rights mt-5">
+        <p><i class="bi bi-c-circle"></i>2022 Football Club - All Rights Reserved.</p>
+    </div>
 </template>
 
 <style scoped>
+p {
+    color: white;
+    text-align: center;
+}
 </style>

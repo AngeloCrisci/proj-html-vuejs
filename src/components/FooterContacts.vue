@@ -25,9 +25,11 @@ export default {
                 <img src="../assets/logo-footer-football.png" alt="logo-club">
             </div>
             <div class="club-contacts" >
-                <div :class="contact.typeOfContact" class="d-flex gap-3" v-for="(contact, index) in contacts" :key="index">
-                    <i :class="contact.img"></i>
-                    <span>{{ contact.reference }}</span>
+                <div class="container-flex-contacts d-flex flex-column gap-2 my-2">
+                    <div :class="contact.typeOfContact" class="d-flex gap-3" v-for="(contact, index) in contacts" :key="index">
+                        <i :class="contact.img"></i>
+                        <span>{{ contact.reference }}</span>
+                    </div>
                 </div>
                 <div class="social d-flex gap-3">
                     <i :class="social" v-for="(social, index) in socials" :key="index"></i>

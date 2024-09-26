@@ -23,15 +23,15 @@ export default {
         <div class="container container-flex">
             <div class="education-section">
                 <h4>Education</h4>
-                <section class="education-links" v-for="(educationLink, index) in educationLinks" :key="index">
-                    <a href="#">{{ educationLink }}</a>
-                </section>
+                <ul class="education-links" v-for="(educationLink, index) in educationLinks" :key="index">
+                    <li><a href="#">{{ educationLink }}</a></li>
+                </ul>
             </div>
             <div class="quick-section">
                 <h4>Quick Links</h4>
-                <section class="quick-links" v-for="(quickLink, index) in quickLinks" :key="index">
-                    <a href="#">{{ quickLink }}</a>
-                </section>
+                <ul class="quick-links" v-for="(quickLink, index) in quickLinks" :key="index">
+                    <li><a href="#">{{ quickLink }}</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -46,6 +46,11 @@ export default {
     display: flex;
     gap: 30px;
     justify-content: end;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 h4 {
