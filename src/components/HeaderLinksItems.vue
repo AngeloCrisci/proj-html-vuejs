@@ -33,7 +33,7 @@ export default {
         font-size: 1.1rem;
 
         &::after {
-            margin-top: 5px;
+            margin-top: 10px;
             display: block;
             content: "";
             width: 0;
