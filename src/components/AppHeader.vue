@@ -80,6 +80,9 @@ export default {
                     </div>
                 </div>
             </div>
+            
+            <a href="#"><i class="bi bi-list text white position-absolute d-none d-xxl-inline" id="sidebar-icon"></i></a>
+            
         </div>
         
         <!-- ! CAROUSEL -->
@@ -189,5 +192,13 @@ export default {
             border: 2px solid white;
             border-radius: 40px;
         }
+    }
+
+    #sidebar-icon {
+        z-index: 1;
+        top: 189px;
+        right: 25%;
+        color: white;
+        font-size: 2.5rem;
     }
 </style>
