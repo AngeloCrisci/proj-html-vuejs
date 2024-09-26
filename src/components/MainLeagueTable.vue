@@ -98,7 +98,7 @@ export default {
                     <td>0</td>
                     <td>42</td>
                 </tr>
-
+<!-- sfsf -->
                 <tr>
                     <td class="number">1</td>
                     <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
