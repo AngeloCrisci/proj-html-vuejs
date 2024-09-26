@@ -28,17 +28,17 @@ export default {
 
 <template>
     <div class="container">
-        <div v-for="(match, index) in teamsMatches" :key="index" class="cards-coming-matches">
-            <div class="mt-5 d-flex justify-content-between card-coming-matches">
+        <div v-for="(match, index) in teamsMatches" :key="index" class="cards-coming-matches pb-5">
+            <div class="mt-5 d-flex justify-content-center align-items-center gap-3 card-coming-matches">
                 <div class=" d-flex">
                     <img :src="getImageUrl(`../assets/${match.image}`)" alt="Image">
-                    <p class="fw-bolder d-flex justify-content-center align-items-center"> {{ match.name }}</p>
+                    <p class="fw-bolder fs-3 d-flex justify-content-center align-items-center"> {{ match.name }}</p>
                 </div>
                 <div>
                     <p class="fw-bolder add-on"> VS</p>
                 </div>
                 <div class=" d-flex">
-                    <p class="fw-bolder d-flex justify-content-center align-items-center"> {{ match.nameTwo }}</p>
+                    <p class="fw-bolder fs-3 d-flex justify-content-center align-items-center"> {{ match.nameTwo }}</p>
                     <img :src="getImageUrl(`../assets/${match.imageTwo}`)" alt="Image">
                 </div>
             </div>
@@ -67,7 +67,7 @@ p {
 }
 
 img {
-    width: 60px;
+    width: 100px;
 }
 
 .add-on {
