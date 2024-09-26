@@ -29,7 +29,7 @@ export default {
 <template>
     <div class="container">
         <div v-for="(match, index) in teamsMatches" :key="index" class="cards-coming-matches pb-5">
-            <div class="mt-5 d-flex justify-content-center align-items-center gap-3 card-coming-matches">
+            <div class="mt-5 d-flex justify-content-center align-items-center gap-5 card-coming-matches">
                 <div class=" d-flex">
                     <img :src="getImageUrl(`../assets/${match.image}`)" alt="Image">
                     <p class="fw-bolder fs-3 d-flex justify-content-center align-items-center"> {{ match.name }}</p>
@@ -43,7 +43,7 @@ export default {
                 </div>
             </div>
             <div class="address">
-                <div class="d-flex justify-content-center align-content-center gap-3">
+                <div class="d-flex justify-content-center align-content-center gap-5">
                     <p class="text-end"><i class="bi bi-calendar3"></i> {{ match.date }} </p>
                     <p><i class="bi bi-plus-circle"></i> Expert Stadium</p>
                 </div>
@@ -71,6 +71,6 @@ img {
 }
 
 .add-on {
-    font-size: 50px;
+    font-size: 40px;
 }
 </style>
