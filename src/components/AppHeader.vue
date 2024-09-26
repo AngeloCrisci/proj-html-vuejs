@@ -89,7 +89,7 @@ export default {
         <section class="header-carousel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item">
+                    <div class="carousel-item active">
                         <img class="d-block w-100" src="../assets/slider1-1.jpg" alt="slider-img-1">
                         
                         <div class="position-absolute carousel-div-text">
@@ -125,7 +125,7 @@ export default {
                         </div>
                     </div>
 
-                    <div class="carousel-item active">
+                    <div class="carousel-item">
                         <img class="d-block w-100" src="../assets/slider4.jpg" alt="slider-img-4">
 
                         <div class="position-absolute carousel-div-text">
@@ -175,7 +175,7 @@ export default {
 
     }
     .carousel-div-text {
-        width: 750px;
+        max-width: 750px;
         position: absolute;
         z-index: 1;
         top: 57%;
