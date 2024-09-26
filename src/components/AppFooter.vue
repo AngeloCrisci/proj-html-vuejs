@@ -79,7 +79,6 @@ methods: {
 
 <style lang="scss">
 footer {
-    height: 400px;
     background-image: url(../assets/footer-bg-football.jpg);
     padding-top: 50px;
 }
@@ -88,5 +87,11 @@ footer {
     display: flex;
     justify-content: space-around;
     gap: 40px;
+}
+
+@media screen and (max-width: 778px) {
+    .footer-top {
+    flex-direction: column;
+}
 }
 </style>

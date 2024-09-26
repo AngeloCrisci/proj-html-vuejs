@@ -53,13 +53,24 @@ ul {
     padding: 0;
 }
 
+li {
+    font-size: 0.8rem;
+}
+
 h4 {
     color: white;
+    margin-bottom: 20px;
 }
 
 a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
+}
+
+@media screen and (max-width: 778px) {
+    .container-flex {
+    justify-content: center;
+}
 }
 </style>

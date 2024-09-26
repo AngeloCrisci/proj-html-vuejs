@@ -20,7 +20,7 @@ export default {
 
 <template>
     <div class="footer-contacts">
-        <div class="container">
+        <div class="container container-flex">
             <div class="club-logo">
                 <img src="../assets/logo-footer-football.png" alt="logo-club">
             </div>
@@ -31,8 +31,8 @@ export default {
                         <span>{{ contact.reference }}</span>
                     </div>
                 </div>
-                <div class="social d-flex gap-3">
-                    <i :class="social" v-for="(social, index) in socials" :key="index"></i>
+                <div class="social">
+                    <a href="#" class="d-flex gap-3"><i :class="social" v-for="(social, index) in socials" :key="index"></i></a>
                 </div>
             </div>
         </div>
@@ -48,23 +48,24 @@ img {
     width: 60px;
 }
 
-.container-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 span {
     color: white;
 }
 
 .bi {
     color: white;
+    font-size: 1.2rem;
 }
 
-.social > .bi {
+.social .bi {
     border: 1px solid white;
     padding: 2px 15px;
+}
+
+@media screen and (max-width: 778px) {
+    .container-flex {
+    display: flex;
+    justify-content: center;
+}
 }
 </style>
