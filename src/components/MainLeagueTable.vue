@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-<div class="container d-flex main-container gap-5 mt-5">
+<div class="container d-flex main-container gap-5 mt-5 mb-4">
     <div class="league-table d-flex flex-column p-1">
         <div class="title d-flex justify-content-center mb-4">
             <h2><strong>League Table</strong></h2>
@@ -128,27 +128,106 @@ export default {
         </table>
     </div>
 
-    <div class="fixtures-results d-flex">
-        <div class="title d-flex justify-content-center">
-            <h1>Fixtures & Results</h1>
+    <div class="fixtures-results">
+        <div class="title d-flex justify-content-center mb-4">
+            <h2><strong>Fixtures & Results</strong></h2>
+        </div>
+        <div class="matches-table d-flex flex-column">
+            <div class="d-flex align-items-center justify-content-center matches gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+            <div class="d-flex align-items-center justify-content-center matches gap-2">
+                <img src="../assets/league-club-2.png" alt="">
+                <p>Istanbul Sports</p>
+                <p><strong>VS</strong></p>
+                <p>United Fs Club</p>
+                <img src="../assets/league-club-3.png" alt="">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center matches-black gap-2">
+                <p><strong>View Full Fixtures</strong></p>
+            </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <img class="img-fluid" src="../assets/reklam.jpg" alt="">
 </div>
 </template>
 
 <style lang="scss" scoped>
 .main-container {
     padding: 0;
+    img{
+        height: 60px;
+        }
     .league-table{
-        width: 800px;
+        flex-basis: 50%;
         table {
             td {
                 vertical-align: baseline;
                 background-color: rgb(245,245,245);
                 border-bottom: none;
-            }
-            img{
-                height: 60px;
             }
             .number{
                 width: 20px;
@@ -166,12 +245,25 @@ export default {
         }
     }
     .fixtures-results {
-        width: 800px;
-        background-color: green;
+        flex-basis: 50%;
+        .matches-table {
+            background-color: rgb(245,245,245);
+            .matches {
+                // width: 550px;
+                height: 80.8px;
+                p {
+                    margin-bottom: 0;
+                }
+            }
+            .matches-b {
+                background-color:rgb(235,235,235);
+            }
+            .matches-black {
+                height: 60px;
+                background-color: black;
+                color: white;
+            }
+        }
     }
-}
-
-.title, .main-table {
-    width: 100%;
 }
 </style>
