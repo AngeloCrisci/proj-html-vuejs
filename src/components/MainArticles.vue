@@ -18,8 +18,16 @@ export default {
     methods: {
         getImageUrl(imgPath) {
             return new URL(imgPath, import.meta.url).href;
+        },
+
+        getActiveIndex () {
+            return this.activeIndex;
         }
     }
+
+    created(getActiveIndex) [
+        getActiveIndex;
+    ]
 }
 </script>
 
@@ -33,20 +41,20 @@ export default {
     <div class="container text-center">
         <div class="row align-items-center">
 
-            <div class="col-3" v-for="(article, index) in articles" :key="index" >
-                <div class="card card-layout">
+            <div class="col-3 card-layout" :class="this.activeIndex ? 'active' : 'd-none'" v-for="(article, activeIndex) in articles" :key="activeIndex" >
+                <div class="card">
                     <div class="card-body text-card-field text-center p-4">
-                        <img :src="getImageUrl(`../assets/${article.img}`)" class="card-img-top" alt="...">
+                        <img :src="getImageUrl(`../assets/${article[activeIndex].img}`)" class="card-img-top" alt="...">
                         <p class="h4">29.05.2022-Football</p>
-                        <p class="h3"><strong>{{ article.name }}</strong></p>
-                        <p>{{ article.description }}</p>
+                        <p class="h3"><strong>{{ article[activeIndex].name }}</strong></p>
+                        <p>{{ article[activeIndex].description }}</p>
                         <button type="button" class="btn btn-dark button-card"><strong>More</strong></button>
                     </div>
-                </div>
+                </div>    
             </div>
 
             <div class="thumbnails d-flex justify-content-center gap-1">
-                <div class="thumb" v-for="n in 5">
+                <div class="thumb" v-for="(article, index) in articles" :key="index" @click="getActiveIndex">
                 </div>
             </div>
 
@@ -66,6 +74,10 @@ export default {
         padding: 20px 50px;
         border-radius: 30px;
     }
+}
+
+.card-layout:active {
+    display: block;
 }
 
 .thumb {
