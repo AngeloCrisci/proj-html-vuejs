@@ -31,10 +31,19 @@ export default {
         text-decoration: none;
         font-weight: bold;
         font-size: 1.1rem;
-        padding-bottom: 10px;
 
-        &:hover {
-            border-bottom: 3px solid white;
+        &::after {
+            margin-top: 5px;
+            display: block;
+            content: "";
+            width: 0;
+            height: 3px;
+            background-color: white;
+            transition: 0.5s;
+        }
+
+        &:hover::after {
+            width: 100%;
         }
     }
 </style>
