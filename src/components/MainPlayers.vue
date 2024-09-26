@@ -167,7 +167,7 @@ li {
     }
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 992px) {
     li:nth-child(3) {
         display: none;
     }
