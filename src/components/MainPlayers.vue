@@ -95,6 +95,7 @@ p {
 
 li {
     list-style-type: none;
+    cursor: pointer;
 }
 
 .title-section {
