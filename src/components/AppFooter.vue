@@ -35,15 +35,17 @@ methods: {
 
 <template>
     <footer>
-        <div class="footer-top">
-            <FooterContacts
-                :contacts="contacts"
-            />
-            <FooterNewsletter/>
-            <FooterLinks/>
-        </div>
-        <div class="footer-bottom">
-            <FooterRights/>
+        <div class="general-components">
+            <div class="footer-top">
+                <FooterContacts
+                    :contacts="contacts"
+                />
+                <FooterNewsletter/>
+                <FooterLinks/>
+            </div>
+            <div class="footer-bottom">
+                <FooterRights/>
+            </div>
         </div>
     </footer>
 </template>
@@ -52,5 +54,11 @@ methods: {
 footer {
     height: 400px;
     background-image: url(../assets/footer-bg-football.jpg);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 </style>
