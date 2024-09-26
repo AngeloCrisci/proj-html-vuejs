@@ -74,7 +74,7 @@ export default {
     max-width: 100%;
     background-image: url(../assets/player.jpg);
     background-position: center;
-    object-fit: cover;
+    background-size: cover;
 }
 
 .container-flex {
