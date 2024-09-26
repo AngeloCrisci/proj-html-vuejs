@@ -215,4 +215,26 @@ export default {
 </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.main-container {
+    img{
+        height: 60px;
+    }
+    .league-table{
+        flex-basis: 50%;
+        table{
+            .number {
+                width: 30px;
+            }
+            td{
+                border-bottom-width: 0px;
+                vertical-align: baseline;
+                width: 50px;
+            }
+        }
+    }
+    .fixtures-results {
+        flex-basis: 50%;
+    }
+}
+</style>
