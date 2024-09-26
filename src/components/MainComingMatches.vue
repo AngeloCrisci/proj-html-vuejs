@@ -1,4 +1,6 @@
 <script>
+import ComingMatchesItems from './ComingMatchesItems.vue';
+
 export default {
     name: 'MainComingMatches',
     props: {
@@ -17,6 +19,7 @@ export default {
         <div class="container">
             <h3 class="text-center pt-4 text-white">UpComing Matchs</h3>
             <div class="cards-coming-matches">
+                <ComingMatchesItems />
                 <div class="mt-5 d-flex justify-content-between card-coming-matches">
                     <div class=" d-flex">
                         <p class="fw-bolder"> TEAM1</p>
