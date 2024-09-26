@@ -6,7 +6,7 @@ export default {
     },
     data() {
         return {
-            sponsor: [
+            sponsors: [
                 'client2.png',
                 'client3.png',
                 'client4.png',
@@ -27,8 +27,8 @@ export default {
 <template>
 <div class="main-sponsors">
         <div class="container">
-            <div class="sponsor">
-
+            <div class="sponsor" v-for="(sponsor, index) in sponsors">
+                <img :src="getImageUrl(`../assets/${sponsor}`)" :alt="sponsor">
             </div>
         </div>
 </div>
