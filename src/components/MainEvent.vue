@@ -1,12 +1,15 @@
 <script>
+import { store } from '../store'
 export default {
     name: 'MainEvent',
-    props: {
-
-    },
     data() {
         return {
-
+            store,
+        }
+    },
+    methods: {
+        getImageUrl(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
         }
     }
 }
@@ -17,15 +20,15 @@ export default {
         <div class="container">
             <div class="mt-5 d-flex justify-content-between">
                 <div class=" d-flex">
-                    <p class="fw-bolder"> TEAM1</p>
-                    <p class="fw-bolder"> IMMAGINE</p>
+                    <p class="fw-bolder"> {{ store.teams[0].name }}</p>
+                    <img :src="getImageUrl(`../assets/${store.teams[0].img}`)" alt="Image">
                 </div>
                 <div>
-                    <p class="fw-bolder"> VS</p>
+                    <p class="fw-bolder add-on"> VS</p>
                 </div>
                 <div class=" d-flex">
-                    <p class="fw-bolder"> IMMAGINE</p>
-                    <p class="fw-bolder"> TEAM2</p>
+                    <p class="fw-bolder"> {{ store.teams[1].name }}</p>
+                    <img :src="getImageUrl(`../assets/${store.teams[1].img}`)" alt="Image">
                 </div>
             </div>
             <div class="address">
@@ -46,5 +49,13 @@ export default {
     font-size: 0.8rem;
     font-weight: 600;
     border-radius: 30px;
+}
+
+img {
+    width: 90px;
+}
+
+.add-on {
+    font-size: 60px;
 }
 </style>
