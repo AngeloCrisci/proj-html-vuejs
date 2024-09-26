@@ -81,7 +81,7 @@ export default {
                 </div>
             </div>
             
-            <a href="#"><i class="bi bi-list text white position-absolute d-none d-xxl-inline" id="sidebar-icon"></i></a>
+            <a href="#"><i class="bi bi-list text white position-absolute d-sm-inline d-md-none d-xxl-inline" id="sidebar-icon"></i></a>
             
         </div>
         
@@ -151,7 +151,7 @@ export default {
 <style lang="scss" scoped>
     .top-header {
         width: 100%;
-        min-height: 200px;
+        height: 220px;
         background-color: rgba(0, 0, 0, 0.7);
         z-index: 1;
 
