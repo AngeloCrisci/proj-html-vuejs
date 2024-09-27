@@ -155,7 +155,7 @@ li:last-child img {
     color: white;
     width: 250px;
     height: 80px;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 10px;
     background-color: black;
     position: absolute;

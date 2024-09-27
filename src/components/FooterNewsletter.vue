@@ -10,7 +10,7 @@ export default {
 
 <template>
     <div class="footer-newsletter d-flex flex-column gap-1">
-        <h3>Join Our Newsletter</h3>
+        <h4>Join Our Newsletter</h4>
         <p>Subscribe to be informed about important developments in our club and football world.</p>
         <input type="text" placeholder="Your Email Address">
         <button>Subscribe <i class="bi bi-arrow-right"></i></button>
@@ -22,7 +22,11 @@ export default {
         flex-basis: calc(100% / 3);
     }
 
-    h3, p {
+    h4 {
+        font-weight: bold;
+    }
+
+    h4, p {
         color: white;
     }
 
