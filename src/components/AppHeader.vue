@@ -70,7 +70,7 @@ export default {
                     </div>
 
                     <div class="ul-box">
-                        <ul class="p-0 justify-content-center gap-5 d-none d-lg-flex">
+                        <ul class="p-0 justify-content-center gap-lg-4 gap-xl-5 d-none d-lg-flex">
 
                             <HeaderLinksItems v-for="(link, index) in navLinks" :key="index"
                             :linkLabel="link.label"
@@ -80,13 +80,16 @@ export default {
                     </div>
                 </div>
             </div>
+            
+            <a href="#"><i class="bi bi-list text white position-absolute d-sm-inline d-md-none d-xxl-inline" id="sidebar-icon"></i></a>
+            
         </div>
         
         <!-- ! CAROUSEL -->
         <section class="header-carousel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item">
+                    <div class="carousel-item active">
                         <img class="d-block w-100" src="../assets/slider1-1.jpg" alt="slider-img-1">
                         
                         <div class="position-absolute carousel-div-text">
@@ -122,7 +125,7 @@ export default {
                         </div>
                     </div>
 
-                    <div class="carousel-item active">
+                    <div class="carousel-item">
                         <img class="d-block w-100" src="../assets/slider4.jpg" alt="slider-img-4">
 
                         <div class="position-absolute carousel-div-text">
@@ -148,13 +151,13 @@ export default {
 <style lang="scss" scoped>
     .top-header {
         width: 100%;
-        min-height: 200px;
+        height: 220px;
         background-color: rgba(0, 0, 0, 0.7);
         z-index: 1;
 
         i {
             font-size: 1.8rem;
-            margin-left: 25px;
+            margin-left: 20px;
         }
 
         .ul-box {
@@ -172,7 +175,7 @@ export default {
 
     }
     .carousel-div-text {
-        width: 750px;
+        max-width: 750px;
         position: absolute;
         z-index: 1;
         top: 57%;
@@ -189,5 +192,13 @@ export default {
             border: 2px solid white;
             border-radius: 40px;
         }
+    }
+
+    #sidebar-icon {
+        z-index: 1;
+        top: 189px;
+        right: 12%;
+        color: white;
+        font-size: 2.5rem;
     }
 </style>

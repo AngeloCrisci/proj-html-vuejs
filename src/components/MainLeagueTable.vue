@@ -1,19 +1,33 @@
 <script>
+import {store} from '../store';
 export default {
     name: 'MainLeagueTable',
-    props: {
-
-    },
     data() {
         return {
-
+            store,
+            teamsFixtures: [
+                { name: store.teams[0].name, image: store.teams[0].img, nameTwo: store.teams[1].name, imageTwo: store.teams[1].img},
+                { name: store.teams[5].name, image: store.teams[5].img, nameTwo: store.teams[3].name, imageTwo: store.teams[3].img},
+                { name: store.teams[4].name, image: store.teams[4].img, nameTwo: store.teams[2].name, imageTwo: store.teams[2].img},
+                { name: store.teams[6].name, image: store.teams[6].img, nameTwo: store.teams[7].name, imageTwo: store.teams[7].img},
+                { name: store.teams[8].name, image: store.teams[8].img, nameTwo: store.teams[0].name, imageTwo: store.teams[0].img},
+                { name: store.teams[1].name, image: store.teams[1].img, nameTwo: store.teams[2].name, imageTwo: store.teams[2].img},
+                { name: store.teams[3].name, image: store.teams[3].img, nameTwo: store.teams[4].name, imageTwo: store.teams[4].img},
+                { name: store.teams[2].name, image: store.teams[2].img, nameTwo: store.teams[6].name, imageTwo: store.teams[6].img},
+                { name: store.teams[7].name, image: store.teams[7].img, nameTwo: store.teams[8].name, imageTwo: store.teams[8].img}
+            ],
+        }
+    },
+    methods: {
+        getImageUrl(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
         }
     }
 }
 </script>
 
 <template>
-<div class="container d-flex main-container gap-5 mt-5 mb-4">
+<div class="container d-flex flex-column flex-md-row main-container gap-5 mt-5 mb-4">
     <div class="league-table d-flex flex-column p-1">
         <div class="title d-flex justify-content-center mb-4">
             <h2><strong>League Table</strong></h2>
@@ -29,101 +43,21 @@ export default {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-<!-- sfsf -->
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
-                </tr>
-
-                <tr>
-                    <td class="number">1</td>
-                    <td class="coat"><img src="../assets/league-club-1.png" alt=""></td>
-                    <td class="name" colspan="2">Instanbul Sports</td>
-                    <td>18</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>42</td>
+                <tr v-for="(team, index) in store.teams">
+                    <td class="number">{{ team.id }}</td>
+                    <td class="coat"><img :src="getImageUrl(`../assets/${team.img}`)" alt=""></td>
+                    <td class="name" colspan="2">{{ team.name }}</td>
+                    <td>{{ team.win }}</td>
+                    <td>{{ team.draw }}</td>
+                    <td>{{ team.lose }}</td>
+                    <td>{{ team.points }}</td>
                 </tr>
             </tbody>
-                <tfoot class="text-center">
-                    <tr>
-                        <td class="bg-black text-white h5" colspan="8"><strong>View Full League Table</strong></td>
-                    </tr>
-                </tfoot>
+            <tfoot class="text-center">
+                <tr>
+                    <td class="bg-black text-white h5" colspan="8"><a class="text-decoration-none text-white" href=""><strong>View Full League Table</strong></a></td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 
@@ -132,79 +66,16 @@ export default {
             <h2><strong>Fixtures & Results</strong></h2>
         </div>
         <div class="matches-table d-flex flex-column">
-            <div class="d-flex align-items-center justify-content-center matches gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
+            <div class="d-flex align-items-center justify-content-center matches gap-2" v-for="(fixtures, index) in teamsFixtures" :key="index">
+                <img :src="getImageUrl(`../assets/${fixtures.image}`)" alt="">
+                <p>{{ fixtures.name }}</p>
                 <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center matches gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center matches gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center matches gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center matches matches-b gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
-            </div>
-            <div class="d-flex align-items-center justify-content-center matches gap-2">
-                <img src="../assets/league-club-2.png" alt="">
-                <p>Istanbul Sports</p>
-                <p><strong>VS</strong></p>
-                <p>United Fs Club</p>
-                <img src="../assets/league-club-3.png" alt="">
+                <p>{{ fixtures.nameTwo }}</p>
+                <img :src="getImageUrl(`../assets/${fixtures.imageTwo}`)" alt="">
             </div>
 
             <div class="d-flex align-items-center justify-content-center matches-black gap-2">
-                <p class="h5"><strong>View Full Fixtures</strong></p>
+                <a href="#" class="h5 text-decoration-none"><strong>View Full Fixtures</strong></a>
             </div>
         </div>
     </div>
@@ -239,9 +110,11 @@ export default {
             }
             tfoot{
                 height: 70px;
+                width: 100%;
                 border-left: 1px solid;
                 border-right: 1px solid;
                 tr{
+                    margin: auto 0;
                     td{
                         vertical-align: middle;
                     }
@@ -256,9 +129,9 @@ export default {
             .matches{
                 height: 80px;
                 background-color: rgb(243,243,243);
-                height: 80.7px;
+                height: 80.9px;
             }
-            .matches-b {
+            .matches:nth-child(even) {
                 background-color: rgb(235,235,235);
             }
             // dsadasd

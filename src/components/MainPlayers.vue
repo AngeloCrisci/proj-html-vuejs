@@ -73,8 +73,10 @@ export default {
 <style lang="scss" scoped>
 .main-players {
     height: 550px;
+    max-width: 100%;
     background-image: url(../assets/player.jpg);
     background-position: center;
+    background-size: cover;
 }
 
 .container-flex {
@@ -95,6 +97,7 @@ p {
 
 li {
     list-style-type: none;
+    cursor: pointer;
 }
 
 .title-section {
@@ -102,6 +105,10 @@ li {
     font-weight: 500;
     text-align: center;
 
+    h3 {
+        font-weight: 700;
+        font-size: 2rem;
+    }
 }
 
 .player-cards-section {
@@ -185,4 +192,22 @@ li:last-child img {
     cursor: pointer;
 }
 
+
+@media screen and (max-width: 1400px) {
+    li:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    li:nth-child(3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    li:nth-child(2) {
+        display: none;
+    }
+}
 </style>
