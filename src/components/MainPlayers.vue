@@ -46,7 +46,7 @@ export default {
             </div>
             <ul class="player-cards-section">
                 <li class="single-card" v-for="(player, index) in players" :key="index">
-                    <div class="card-image-container">
+                    <div class="card-image-container" :class="`card-${index}`">
                         <div class="card-image">
                             <img :src='getImageUrl(`../assets/${player.img}`)' alt="player-img">
                         </div>
@@ -109,7 +109,7 @@ li {
     justify-content: space-around;
 }
 
-.card-image-container {
+.card-image-container:not(li:last-child .card-image-container) {
     width: 250px;
     height: 280px;
     background-color: black;
@@ -119,8 +119,8 @@ li {
     align-items: flex-end;
 }
 
-li:last-child .card-image-container {
-    background-color: #1B1B19;
+li:last-child img {
+    width: 250px;
 }
 
 .card-image:hover {
@@ -130,6 +130,10 @@ li:last-child .card-image-container {
 .card-image:hover + .player-description{
     bottom: -20px;
     left: 0;
+}
+
+.card-3:hover > .player-description {
+    scale: 1.1;
 }
 
 .single-card {
