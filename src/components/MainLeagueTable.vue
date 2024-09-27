@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-<div class="container d-flex main-container gap-5 mt-5 mb-4">
+<div class="container d-flex flex-column flex-md-row main-container gap-5 mt-5 mb-4">
     <div class="league-table d-flex flex-column p-1">
         <div class="title d-flex justify-content-center mb-4">
             <h2><strong>League Table</strong></h2>
