@@ -46,15 +46,17 @@ export default {
             </div>
             <ul class="player-cards-section">
                 <li class="single-card" v-for="(player, index) in players" :key="index">
-                    <div class="card-image">
-                        <img :src='getImageUrl(`../assets/${player.img}`)' alt="player-img">
-                    </div>
-                    <div class="player-description">
-                        <div class="number">
-                            {{ player.shirtNumber }}
+                    <div class="card-image-container" :class="`card-${index}`">
+                        <div class="card-image">
+                            <img :src='getImageUrl(`../assets/${player.img}`)' alt="player-img">
                         </div>
-                        <div class="name-role">
-                            {{ player.nameAndRole }}
+                        <div class="player-description">
+                            <div class="number">
+                                {{ player.shirtNumber }}
+                            </div>
+                            <div class="name-role">
+                                {{ player.nameAndRole }}
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -86,7 +88,7 @@ export default {
 }
 
 img {
-    width: 250px;
+    width: 225px;
 }
 
 p {
@@ -114,12 +116,42 @@ li {
     justify-content: space-around;
 }
 
+.card-image-container:not(li:last-child .card-image-container) {
+    width: 250px;
+    height: 280px;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+li:last-child img {
+    width: 250px;
+}
+
+.card-image:hover {
+    scale: 1.1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image:hover + .player-description{
+    bottom: -20px;
+    left: 0;
+}
+
+.card-3:hover > .player-description {
+    scale: 1.1;
+}
+
 .single-card {
     position: relative;
 }
 
 .card-image img {
-        border-radius: 20px;
+    border-radius: 20px;
 }
 
 .player-description {
@@ -130,7 +162,7 @@ li {
     color: white;
     width: 250px;
     height: 80px;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 10px;
     background-color: black;
     position: absolute;
