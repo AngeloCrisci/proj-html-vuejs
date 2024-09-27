@@ -35,12 +35,62 @@ export default {
                     label: "CONTACT",
                     url: "#",
                 },
+            ],
+            currentImage: 0,
+            images: [
+                {
+                    image: 'src/assets/slider1-1.jpg',
+                    description: "Welcome to Football Club",
+                    slogan: 'Live match fix types and results.',
+                },
+                {
+                    image: 'src/assets/slider2-1.jpg',
+                    description: 'Welcome to Football Club',
+                    slogan: 'Live match fix types and results.',
+                },
+                {
+                    image: 'src/assets/slider3.jpg',
+                    description: 'Welcome to Football Club',
+                    slogan: 'Live match fix types and results.',
+                },
+                {
+                    image: 'src/assets/slider4.jpg',
+                    description: 'Welcome to Football Club',
+                    slogan: 'Live match fix types and results.',
+                },
             ]
         }
     },
     components: {
         HeaderLinksItems
+    },
+
+    methods: {
+        currentImage(index) {
+            this.currentImage = index
+        },
+    },
+        methods: {
+
+        nextImage() {
+            this.currentImage = this.currentImage + 1
+            if (this.currentImage > this.images.length - 1) {
+                this.currentImage = 0
+            }
+        },
+
+        prevImage() {
+            this.currentImage = this.currentImage - 1
+            if (this.currentImage < 0) {
+                this.currentImage = this.images.length - 1
+            }
+        },
     }
+
+        // getImageUrl(imgPath) {
+        //     return new URL(imgPath, import.meta.url).href;
+        // }
+
 }
 
 </script>
@@ -84,66 +134,27 @@ export default {
             <a href="#"><i class="bi bi-list text white position-absolute d-sm-inline d-md-none d-xxl-inline" id="sidebar-icon"></i></a>
             
         </div>
-        
+
         <!-- ! CAROUSEL -->
         <section class="header-carousel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
+
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="../assets/slider1-1.jpg" alt="slider-img-1">
+                        <img id="img-carousel" alt="slider-img-1" v-for="(image, index) in images" :key="index" :src="image.image" :class="{'active': index === currentImage}">
                         
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Welcome to <br> Football Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Live match fix types and results.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../assets/slider2-1.jpg" alt="slider-img-2">
-
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Football Club <br> Sport Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Private football matches.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../assets/slider3.jpg" alt="slider-img-3">
-
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Professional Football Football Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Football is the poetry of movement.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../assets/slider4.jpg" alt="slider-img-4">
-
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Football Club <br> Sport Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Football is a head game.</p>
+                        <div class="position-absolute carousel-text">
+                            <h1 class="text-white fw-bold text-center">{{ images[currentImage].description }}</h1>
+                            <p class="text-white fw-bold text-center fs-5 mb-4">{{ images[currentImage].description }}</p>
                             <div class="d-flex justify-content-center">
                                 <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
             </div>
+            <button @click="prevImage">sadfdfasafds</button>
+            <button @click="nextImage">asdasdgasgdag</button>
         </section>
     </header>
 </template>
@@ -172,9 +183,17 @@ export default {
     .header-carousel img{
         height: 1140px;
         object-fit: cover;
-
     }
-    .carousel-div-text {
+
+    #img-carousel {
+    display: none;
+}
+
+        #img-carousel.active {
+            display: block;
+        }
+
+    .carousel-text {
         max-width: 750px;
         position: absolute;
         z-index: 1;
