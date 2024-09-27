@@ -40,23 +40,27 @@ export default {
             images: [
                 {
                     image: 'src/assets/slider1-1.jpg',
-                    description: "Welcome to Football Club",
+                    description: 'Welcome to',
+                    description2 :'Football Club',
                     slogan: 'Live match fix types and results.',
                 },
                 {
                     image: 'src/assets/slider2-1.jpg',
-                    description: 'Welcome to Football Club',
-                    slogan: 'Live match fix types and results.',
+                    description: 'Football Club',
+                    description2: 'Sport Club',
+                    slogan: 'Private Football Matches.',
                 },
                 {
                     image: 'src/assets/slider3.jpg',
-                    description: 'Welcome to Football Club',
-                    slogan: 'Live match fix types and results.',
+                    description: 'Professional Football',
+                    description2: 'Football Club',
+                    slogan: 'Football is poetry of movement.',
                 },
                 {
                     image: 'src/assets/slider4.jpg',
-                    description: 'Welcome to Football Club',
-                    slogan: 'Live match fix types and results.',
+                    description: 'Football Club',
+                    description2: 'Sport Club',
+                    slogan: 'Football is a head game.',
                 },
             ]
         }
@@ -64,33 +68,25 @@ export default {
     components: {
         HeaderLinksItems
     },
-
     methods: {
-        currentImage(index) {
+        setCurrentPic(index) {
             this.currentImage = index
         },
-    },
-        methods: {
 
-        nextImage() {
+        getNextImage() {
             this.currentImage = this.currentImage + 1
             if (this.currentImage > this.images.length - 1) {
                 this.currentImage = 0
             }
         },
 
-        prevImage() {
+        getPrevImage() {
             this.currentImage = this.currentImage - 1
             if (this.currentImage < 0) {
                 this.currentImage = this.images.length - 1
             }
         },
     }
-
-        // getImageUrl(imgPath) {
-        //     return new URL(imgPath, import.meta.url).href;
-        // }
-
 }
 
 </script>
@@ -140,12 +136,12 @@ export default {
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
 
-                    <div class="carousel-item active">
-                        <img id="img-carousel" alt="slider-img-1" v-for="(image, index) in images" :key="index" :src="image.image" :class="{'active': index === currentImage}">
+                    <div class="carousel-item position-relative active" v-for="(image, index) in images" :key="index" >
+                        <img class="img-carousel" :alt="`slider-image-${ index + 1 }`" :src="image.image" :class="{'active': index === currentImage}">
                         
-                        <div class="position-absolute carousel-text">
-                            <h1 class="text-white fw-bold text-center">{{ images[currentImage].description }}</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">{{ images[currentImage].description }}</p>
+                        <div class="position-absolute carousel-div-text" :class="{'active': index === currentImage}">
+                            <h1 class="text-white fw-bold text-center">{{ image.description }}<br>{{ image.description2 }}</h1>
+                            <p class="text-white fw-bold text-center fs-5 mb-4">{{ image.slogan }}</p>
                             <div class="d-flex justify-content-center">
                                 <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
                             </div>
@@ -153,8 +149,8 @@ export default {
                     </div>
                 </div>
             </div>
-            <button @click="prevImage">sadfdfasafds</button>
-            <button @click="nextImage">asdasdgasgdag</button>
+            <i class="bi bi-arrow-left-circle" @click="getPrevImage"></i>
+            <i class="bi bi-arrow-right-circle" @click="getNextImage"></i>
         </section>
     </header>
 </template>
@@ -182,24 +178,53 @@ export default {
 
     .header-carousel img{
         height: 1140px;
+        width: 100%;
         object-fit: cover;
+        position: relative;
     }
 
-    #img-carousel {
-    display: none;
-}
+    i.bi-arrow-left-circle {
+            position: absolute;
+            left: 100px;
+            top: 45%;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            text-shadow: 0 0 5px black;
 
-        #img-carousel.active {
-            display: block;
-        }
+            &:hover {
+                scale: 1.1;
+            }
+    }
 
-    .carousel-text {
+    i.bi-arrow-right-circle {
+            position: absolute;
+            right: 100px;
+            top: 45%;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            text-shadow: 0 0 5px black;
+
+            &:hover {
+                scale: 1.1;
+            }
+    }
+
+    .carousel-div-text {
         max-width: 750px;
         position: absolute;
-        z-index: 1;
         top: 57%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+            & {
+                display: none;
+            }
+
+            &.active {
+                display: block;
+            }
 
         h1 {
             font-size: 4.6rem;
@@ -212,6 +237,14 @@ export default {
             border-radius: 40px;
         }
     }
+
+    .img-carousel {
+    display: none;
+}
+
+        .img-carousel.active {
+            display: block;
+        }
 
     #sidebar-icon {
         z-index: 1;
