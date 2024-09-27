@@ -36,18 +36,36 @@ export default {
 
 <template>
     <div class="container">
-        <swiper :slidesPerView="4" :spaceBetween="1" :pagination="{
-            clickable: true,
-        }" :modules="modules" class="mySwiper">
+        <swiper :slidesPerView="4" :centeredSlides="true" :spaceBetween="30" :grabCursor="true" :loop="true"
+            :pagination="{
+                clickable: true,
+            }" :breakpoints="{
+                '640': {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                '768': {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                '1024': {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                '1400': {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
 
+            }" :modules="modules" class="mySwiper">
             <swiper-slide v-for="(article, index) in articles" :key="index">
-                <div class="col-3 card-layout mt-3">
-                    <div class="card">
+                <div class="col-3 card-layout m-3">
+                    <div class="card mb-5">
                         <div class="card-body text-card-field text-center p-4">
                             <img :src="getImageUrl(`../assets/${article.img}`)" class="card-img-top img-fluid"
                                 alt="...">
-                            <p class="h4">29.05.2022-Football</p>
-                            <p class="h3"><strong>{{ article.name }}</strong></p>
+                            <p class="fs-6">29.05.2022-Football</p>
+                            <p class="fs-5"><strong>{{ article.name }}</strong></p>
                             <p>{{ article.description }}</p>
                             <button type="button" class="btn btn-dark button-card"><strong>More</strong></button>
                         </div>
@@ -75,15 +93,27 @@ export default {
 }
 
 
+.card {
+    height: 35rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
 .swiper {
     width: 100%;
     height: 100%;
-    margin-bottom: 10px;
 }
 
 .swiper-slide {
     text-align: center;
+    font-size: 18px;
     background: #fff;
+
+    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +122,7 @@ export default {
 .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 30%;
     object-fit: cover;
 }
 </style>
