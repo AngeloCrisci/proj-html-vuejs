@@ -24,10 +24,6 @@ export default {
             return this.activeIndex;
         }
     }
-
-    created(getActiveIndex) [
-        getActiveIndex;
-    ]
 }
 </script>
 
