@@ -46,15 +46,17 @@ export default {
             </div>
             <ul class="player-cards-section">
                 <li class="single-card" v-for="(player, index) in players" :key="index">
-                    <div class="card-image">
-                        <img :src='getImageUrl(`../assets/${player.img}`)' alt="player-img">
-                    </div>
-                    <div class="player-description">
-                        <div class="number">
-                            {{ player.shirtNumber }}
+                    <div class="card-image-container">
+                        <div class="card-image">
+                            <img :src='getImageUrl(`../assets/${player.img}`)' alt="player-img">
                         </div>
-                        <div class="name-role">
-                            {{ player.nameAndRole }}
+                        <div class="player-description">
+                            <div class="number">
+                                {{ player.shirtNumber }}
+                            </div>
+                            <div class="name-role">
+                                {{ player.nameAndRole }}
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -84,7 +86,7 @@ export default {
 }
 
 img {
-    width: 250px;
+    width: 225px;
 }
 
 p {
@@ -107,12 +109,35 @@ li {
     justify-content: space-around;
 }
 
+.card-image-container {
+    width: 250px;
+    height: 280px;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+li:last-child .card-image-container {
+    background-color: #1B1B19;
+}
+
+.card-image:hover {
+    scale: 1.1;
+}
+
+.card-image:hover + .player-description{
+    bottom: -20px;
+    left: 0;
+}
+
 .single-card {
     position: relative;
 }
 
 .card-image img {
-        border-radius: 20px;
+    border-radius: 20px;
 }
 
 .player-description {

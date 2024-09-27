@@ -39,6 +39,7 @@ export default {
     background-color: black;
     display: flex;
     align-items: center;
+    padding: 20px;
 }
 
 .container-flex {
