@@ -40,7 +40,7 @@ export const store = reactive({
         },
         {
             id: 5,
-            img: 'club-5.png',
+            img: 'league-club-5.png',
             name: 'Madrid Club',
             win: 12,
             draw: 1,
