@@ -76,4 +76,10 @@ img {
 .add-on {
     font-size: 40px;
 }
+
+@media screen and (max-width: 580px) {
+    img {
+        width: 50px;
+    }
+}
 </style>
