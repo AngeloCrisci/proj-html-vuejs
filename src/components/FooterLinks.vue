@@ -24,13 +24,13 @@ export default {
             <div class="education-section">
                 <h4>Education</h4>
                 <ul class="education-links" v-for="(educationLink, index) in educationLinks" :key="index">
-                    <li><a href="#">{{ educationLink }}</a></li>
+                    <li><span class="list-symbol">-</span><a href="#">{{ educationLink }}</a></li>
                 </ul>
             </div>
             <div class="quick-section">
                 <h4>Quick Links</h4>
                 <ul class="quick-links" v-for="(quickLink, index) in quickLinks" :key="index">
-                    <li><a href="#">{{ quickLink }}</a></li>
+                    <li><span class="list-symbol">-</span><a href="#">{{ quickLink }}</a></li>
                 </ul>
             </div>
         </div>
@@ -51,10 +51,18 @@ export default {
 ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 5px;
 }
 
 li {
     font-size: 0.8rem;
+}
+
+.list-symbol {
+    margin-right: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
 }
 
 h4 {
