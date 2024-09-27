@@ -55,7 +55,7 @@ export default {
             </tbody>
             <tfoot class="text-center">
                 <tr>
-                    <td class="bg-black text-white h5" colspan="8"><strong>View Full League Table</strong></td>
+                    <td class="bg-black text-white h5" colspan="8"><a class="text-decoration-none text-white" href=""><strong>View Full League Table</strong></a></td>
                 </tr>
             </tfoot>
         </table>
@@ -75,7 +75,7 @@ export default {
             </div>
 
             <div class="d-flex align-items-center justify-content-center matches-black gap-2">
-                <p class="h5"><strong>View Full Fixtures</strong></p>
+                <a href="#" class="h5 text-decoration-none"><strong>View Full Fixtures</strong></a>
             </div>
         </div>
     </div>
