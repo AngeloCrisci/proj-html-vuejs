@@ -68,6 +68,7 @@ li {
 h4 {
     color: white;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 a {
