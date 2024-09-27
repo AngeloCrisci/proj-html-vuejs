@@ -177,7 +177,7 @@ export default {
     }
 
     .header-carousel img{
-        height: 1140px;
+        height: 90vh;
         width: 100%;
         object-fit: cover;
         position: relative;
