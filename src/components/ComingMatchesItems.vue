@@ -28,24 +28,27 @@ export default {
 
 <template>
     <div class="container">
-        <div v-for="(match, index) in teamsMatches" :key="index" class="cards-coming-matches">
-            <div class="mt-5 d-flex justify-content-between card-coming-matches">
-                <div class=" d-flex">
-                    <img :src="getImageUrl(`../assets/${match.image}`)" alt="Image">
-                    <p class="fw-bolder d-flex justify-content-center align-items-center"> {{ match.name }}</p>
+        <div class="pb-5">
+            <div v-for="(match, index) in teamsMatches" :key="index" class="cards-coming-matches">
+                <div class="mt-5 d-flex justify-content-center align-items-center gap-5 card-coming-matches">
+                    <div class=" d-flex">
+                        <img :src="getImageUrl(`../assets/${match.image}`)" alt="Image">
+                        <p class="fw-bolder fs-3 d-flex justify-content-center align-items-center"> {{ match.name }}</p>
+                    </div>
+                    <div>
+                        <p class="fw-bolder add-on"> VS</p>
+                    </div>
+                    <div class=" d-flex">
+                        <p class="fw-bolder fs-3 d-flex justify-content-center align-items-center"> {{ match.nameTwo }}
+                        </p>
+                        <img :src="getImageUrl(`../assets/${match.imageTwo}`)" alt="Image">
+                    </div>
                 </div>
-                <div>
-                    <p class="fw-bolder add-on"> VS</p>
-                </div>
-                <div class=" d-flex">
-                    <p class="fw-bolder d-flex justify-content-center align-items-center"> {{ match.nameTwo }}</p>
-                    <img :src="getImageUrl(`../assets/${match.imageTwo}`)" alt="Image">
-                </div>
-            </div>
-            <div class="address">
-                <div class="d-flex justify-content-center align-content-center">
-                    <p class="text-end"> {{ match.date }} </p>
-                    <p># Expert Stadium</p>
+                <div class="address">
+                    <div class="d-flex justify-content-center align-content-center gap-5">
+                        <p class="text-end"><i class="bi bi-calendar3"></i> {{ match.date }} </p>
+                        <p><i class="bi bi-plus-circle"></i> Expert Stadium</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,10 +70,10 @@ p {
 }
 
 img {
-    width: 60px;
+    width: 100px;
 }
 
 .add-on {
-    font-size: 50px;
+    font-size: 40px;
 }
 </style>
