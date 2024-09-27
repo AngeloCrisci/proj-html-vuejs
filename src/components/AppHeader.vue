@@ -40,22 +40,26 @@ export default {
             images: [
                 {
                     image: 'src/assets/slider1-1.jpg',
-                    description: `Welcome to Football Club`,
+                    description: 'Welcome to',
+                    description2 :'Football Club',
                     slogan: 'Live match fix types and results.',
                 },
                 {
                     image: 'src/assets/slider2-1.jpg',
-                    description: 'Football Club Sport Club',
+                    description: 'Football Club',
+                    description2: 'Sport Club',
                     slogan: 'Private Football Matches.',
                 },
                 {
                     image: 'src/assets/slider3.jpg',
-                    description: 'Professional Football Football Club',
+                    description: 'Professional Football',
+                    description2: 'Football Club',
                     slogan: 'Football is poetry of movement.',
                 },
                 {
                     image: 'src/assets/slider4.jpg',
-                    description: 'Football Club Sport Club',
+                    description: 'Football Club',
+                    description2: 'Sport Club',
                     slogan: 'Football is a head game.',
                 },
             ]
@@ -135,8 +139,8 @@ export default {
                     <div class="carousel-item position-relative active" v-for="(image, index) in images" :key="index" >
                         <img class="img-carousel" :alt="`slider-image-${ index + 1 }`" :src="image.image" :class="{'active': index === currentImage}">
                         
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">{{ image.description }}</h1>
+                        <div class="position-absolute carousel-div-text" :class="{'active': index === currentImage}">
+                            <h1 class="text-white fw-bold text-center">{{ image.description }}<br>{{ image.description2 }}</h1>
                             <p class="text-white fw-bold text-center fs-5 mb-4">{{ image.slogan }}</p>
                             <div class="d-flex justify-content-center">
                                 <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
@@ -213,6 +217,14 @@ export default {
         top: 57%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+            & {
+                display: none;
+            }
+
+            &.active {
+                display: block;
+            }
 
         h1 {
             font-size: 4.6rem;
