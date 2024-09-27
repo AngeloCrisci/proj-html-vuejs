@@ -27,7 +27,7 @@ export default {
 <template>
 <div class="main-sponsors">
         <div class="container container-flex">
-            <div class="sponsor" v-for="(sponsor, index) in sponsors" :key="index">
+            <div class="sponsor animation-sponsor" v-for="(sponsor, index) in sponsors" :key="index">
                 <img :src="getImageUrl(`../assets/${sponsor}`)" :alt="sponsor">
             </div>
         </div>
@@ -53,6 +53,15 @@ export default {
     align-items: center;
     justify-content: space-around;
     gap: 20px;
+}
+
+.animation-sponsor {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 }
 
 img {
