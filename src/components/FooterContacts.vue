@@ -62,6 +62,10 @@ span {
     padding: 2px 15px;
 }
 
+.social .bi:hover {
+    border: transparent;
+}
+
 @media screen and (max-width: 778px) {
     .container-flex {
     display: flex;

@@ -65,7 +65,7 @@ export default {
 }
 
 img {
-    width: 70%;
+    width: 85%;
     border: 1px solid white;
     border-radius: 30px;
     padding: 20px;
