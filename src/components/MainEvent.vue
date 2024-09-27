@@ -38,7 +38,7 @@ export default {
                 </div>
             </div>
             <div class="d-flex justify-content-center align-content-center mb-4">
-                <button type="button" class="my-btn btn btn-dark text-center p-3 py-3">View Match Details</button>
+                <button type="button" class="my-btn btn btn-dark text-center px-5 py-3 fs-5">View Match Details</button>
             </div>
         </div>
     </section>
