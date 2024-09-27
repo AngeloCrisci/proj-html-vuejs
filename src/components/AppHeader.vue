@@ -35,11 +35,53 @@ export default {
                     label: "CONTACT",
                     url: "#",
                 },
+            ],
+            currentImage: 0,
+            images: [
+                {
+                    image: 'src/assets/slider1-1.jpg',
+                    description: `Welcome to Football Club`,
+                    slogan: 'Live match fix types and results.',
+                },
+                {
+                    image: 'src/assets/slider2-1.jpg',
+                    description: 'Football Club Sport Club',
+                    slogan: 'Private Football Matches.',
+                },
+                {
+                    image: 'src/assets/slider3.jpg',
+                    description: 'Professional Football Football Club',
+                    slogan: 'Football is poetry of movement.',
+                },
+                {
+                    image: 'src/assets/slider4.jpg',
+                    description: 'Football Club Sport Club',
+                    slogan: 'Football is a head game.',
+                },
             ]
         }
     },
     components: {
         HeaderLinksItems
+    },
+    methods: {
+        setCurrentPic(index) {
+            this.currentImage = index
+        },
+
+        getNextImage() {
+            this.currentImage = this.currentImage + 1
+            if (this.currentImage > this.images.length - 1) {
+                this.currentImage = 0
+            }
+        },
+
+        getPrevImage() {
+            this.currentImage = this.currentImage - 1
+            if (this.currentImage < 0) {
+                this.currentImage = this.images.length - 1
+            }
+        },
     }
 }
 
@@ -89,61 +131,22 @@ export default {
         <section class="header-carousel">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="../assets/slider1-1.jpg" alt="slider-img-1">
+
+                    <div class="carousel-item position-relative active" v-for="(image, index) in images" :key="index" >
+                        <img class="img-carousel" :alt="`slider-image-${ index + 1 }`" :src="image.image" :class="{'active': index === currentImage}">
                         
                         <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Welcome to <br> Football Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Live match fix types and results.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../assets/slider2-1.jpg" alt="slider-img-2">
-
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Football Club <br> Sport Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Private football matches.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../assets/slider3.jpg" alt="slider-img-3">
-
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Professional Football Football Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Football is the poetry of movement.</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../assets/slider4.jpg" alt="slider-img-4">
-
-                        <div class="position-absolute carousel-div-text">
-                            <h1 class="text-white fw-bold text-center">Football Club <br> Sport Club</h1>
-                            <p class="text-white fw-bold text-center fs-5 mb-4">Football is a head game.</p>
+                            <h1 class="text-white fw-bold text-center">{{ image.description }}</h1>
+                            <p class="text-white fw-bold text-center fs-5 mb-4">{{ image.slogan }}</p>
                             <div class="d-flex justify-content-center">
                                 <a href="#" class="text-white fw-bold fs-5">Learn More &#129050;</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
             </div>
+            <i class="bi bi-arrow-left-circle" @click="getPrevImage"></i>
+            <i class="bi bi-arrow-right-circle" @click="getNextImage"></i>
         </section>
     </header>
 </template>
@@ -171,13 +174,42 @@ export default {
 
     .header-carousel img{
         height: 1140px;
+        width: 100%;
         object-fit: cover;
-
+        position: relative;
     }
+
+    i.bi-arrow-left-circle {
+            position: absolute;
+            left: 100px;
+            top: 45%;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            text-shadow: 0 0 5px black;
+
+            &:hover {
+                scale: 1.1;
+            }
+    }
+
+    i.bi-arrow-right-circle {
+            position: absolute;
+            right: 100px;
+            top: 45%;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            text-shadow: 0 0 5px black;
+
+            &:hover {
+                scale: 1.1;
+            }
+    }
+
     .carousel-div-text {
         max-width: 750px;
         position: absolute;
-        z-index: 1;
         top: 57%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -193,6 +225,14 @@ export default {
             border-radius: 40px;
         }
     }
+
+    .img-carousel {
+    display: none;
+}
+
+        .img-carousel.active {
+            display: block;
+        }
 
     #sidebar-icon {
         z-index: 1;
