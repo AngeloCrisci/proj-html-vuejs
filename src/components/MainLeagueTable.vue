@@ -131,7 +131,7 @@ export default {
                 background-color: rgb(243,243,243);
                 height: 80.9px;
             }
-            .matches-b {
+            .matches:nth-child(even) {
                 background-color: rgb(235,235,235);
             }
             // dsadasd
